@@ -27,6 +27,7 @@ export type TimelineItem = {
   title: string
   cover: string
   blurb: string
+  actions: string
 }
 export type TimelineContent = { items: TimelineItem[] }
 

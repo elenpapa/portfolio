@@ -11,20 +11,52 @@ onMounted(async () => {
 <template>
   <section id="timeline" v-reveal>
     <div class="container timeline">
-      <h2 class="visually-hidden">Book timeline</h2>
-      <div class="line" aria-hidden="true"></div>
-      <article
-        v-for="(item, idx) in data?.items"
-        :key="idx"
-        :class="['entry', { right: idx % 2 === 1 }]"
-      >
-        <img class="cover" :src="item.cover" :alt="item.title" loading="lazy" decoding="async" />
-        <div class="meta">
-          <h3>{{ item.title }}</h3>
-          <span class="year">{{ item.year }}</span>
-          <p class="blurb">{{ item.blurb }}</p>
+      <h2 class="section-title">Εργογραφία</h2>
+      <div class="timeline-grid" aria-hidden="false">
+        <div class="timeline-column timeline-column--left">
+          <article
+            v-for="(item, idx) in data?.items.filter((_, i) => i % 2 === 0)"
+            :key="`left-${idx}`"
+            class="entry"
+          >
+            <img
+              class="cover"
+              :src="item.cover"
+              :alt="item.title"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="meta">
+              <h3>{{ item.title }}</h3>
+              <span class="year">{{ item.year }}</span>
+              <p class="blurb">{{ item.blurb }}</p>
+              <p class="actions">{{ item.actions }}</p>
+            </div>
+          </article>
         </div>
-      </article>
+        <div class="timeline-divider" aria-hidden="true"></div>
+        <div class="timeline-column timeline-column--right">
+          <article
+            v-for="(item, idx) in data?.items.filter((_, i) => i % 2 === 1)"
+            :key="`right-${idx}`"
+            class="entry entry--right"
+          >
+            <img
+              class="cover"
+              :src="item.cover"
+              :alt="item.title"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="meta">
+              <h3>{{ item.title }}</h3>
+              <span class="year">{{ item.year }}</span>
+              <p class="blurb">{{ item.blurb }}</p>
+              <p class="actions">{{ item.actions }}</p>
+            </div>
+          </article>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -33,49 +65,59 @@ onMounted(async () => {
 .timeline {
   position: relative;
 }
-.line {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 32px;
+  align-items: flex-start;
+}
+.timeline-divider {
   width: 2px;
   background: rgba(0, 0, 0, 0.1);
+  align-self: stretch;
+  min-height: 100%;
+}
+.timeline-column {
+  display: flex;
+  flex-direction: column;
 }
 .entry {
   display: grid;
-  grid-template-columns: 120px auto;
+  grid-template-columns: 220px auto;
   gap: 16px;
   padding: 24px 0;
   position: relative;
+  margin-bottom: 160px;
+  align-items: center;
 }
-.entry.right {
-  grid-template-columns: auto 120px;
-  justify-items: end;
+.entry--right {
+  grid-template-columns: auto 220px;
+  margin-top: 160px;
+  margin-bottom: 0px;
 }
-.entry.right .meta {
-  grid-column: 1 / 2;
+.entry--right .meta {
+  order: 1;
   text-align: right;
 }
-.entry.right .cover {
-  grid-column: 2 / 3;
+.entry--right .cover {
+  order: 2;
 }
 .cover {
-  width: 120px;
-  height: 160px;
-  object-fit: cover;
+  width: 100%;
+  height: auto;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
 }
 .meta h3 {
   font-family: var(--font-serif);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-2xl);
   font-weight: 600;
   line-height: 1.3;
   margin: 0 0 8px;
 }
 .meta .year {
   font-family: var(--font-sans);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xl);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--color-primary-600);
@@ -83,21 +125,46 @@ onMounted(async () => {
 }
 .meta .blurb {
   font-family: var(--font-serif);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-lg);
   line-height: 1.6;
   margin: 10px 0 0;
   color: var(--color-muted);
 }
+.meta .actions {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xl);
+  line-height: 1.5;
+  margin: 8px 0 0;
+  color: var(--color-primary-600);
+  font-weight: 600;
+  font-style: italic;
+}
 @media (max-width: 900px) {
-  .line {
-    left: 8px;
+  .timeline-grid {
+    grid-template-columns: 1fr;
+  }
+  .timeline-divider {
+    display: none;
+  }
+  .timeline-column {
+    border-left: 2px solid rgba(0, 0, 0, 0.1);
+    padding-left: 16px;
   }
   .entry,
-  .entry.right {
-    grid-template-columns: 120px auto;
+  .entry--right {
+    grid-template-columns: 240px auto;
   }
-  .entry.right .meta {
+  .entry--right .meta {
     text-align: left;
   }
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 16px;
+  text-align: center;
 }
 </style>

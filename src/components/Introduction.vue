@@ -63,9 +63,14 @@ onMounted(async () => {
 .image img {
   position: relative;
   width: 75%;
-  /* height: 550px; */
   object-fit: cover;
   border-radius: var(--radius-lg);
+}
+
+@media (max-width: 768px) {
+  .image img {
+    width: 100%;
+  }
 }
 @media (max-width: 900px) {
   .intro {

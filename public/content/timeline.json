@@ -1,136 +1,193 @@
 {
   "items": [
     {
-      "year": 2025,
-      "title": "Lorem Ipsum Vol 01",
-      "cover": "/images/books/18 Μέρες Μετά.jpg",
-      "blurb": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    },
-    {
-      "year": 2024,
-      "title": "Lorem Ipsum Vol 02",
-      "cover": "/images/books/9786182250488.jpg",
-      "blurb": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-      "year": 2023,
-      "title": "Lorem Ipsum Vol 03",
-      "cover": "/images/books/Absent.jpg",
-      "blurb": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
-    },
-    {
-      "year": 2022,
-      "title": "Lorem Ipsum Vol 04",
-      "cover": "/images/books/Once Upon A Horror Time.jpg",
-      "blurb": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum."
+      "year": 2021,
+      "title": "Ηλιαχτίδα",
+      "cover": "/images/books/Ηλιαχτίδα.jpg",
+      "blurb": "Αστυνομικό μυθιστόρημα",
+      "actions": "Επιμέλεια-Διόρθωση"
     },
     {
       "year": 2021,
-      "title": "Lorem Ipsum Vol 05",
-      "cover": "/images/books/Wednesday.jpg",
-      "blurb": "Eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
-    },
-    {
-      "year": 2020,
-      "title": "Lorem Ipsum Vol 06",
-      "cover": "/images/books/Ένα μόνο γράμμα.jpg",
-      "blurb": "Sunt in culpa qui officia deserunt mollit anim id est laborum."
-    },
-    {
-      "year": 2019,
-      "title": "Lorem Ipsum Vol 07",
-      "cover": "/images/books/Αίμα από ασήμι.jpg",
-      "blurb": "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus."
-    },
-    {
-      "year": 2018,
-      "title": "Lorem Ipsum Vol 08",
-      "cover": "/images/books/Αυτόματη Εστιαση.jpg",
-      "blurb": "Vivamus suscipit tortor eget felis porttitor volutpat."
-    },
-    {
-      "year": 2017,
-      "title": "Lorem Ipsum Vol 09",
-      "cover": "/images/books/Για λίγο σ' αγαπώ.png",
-      "blurb": "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi."
-    },
-    {
-      "year": 2016,
-      "title": "Lorem Ipsum Vol 10",
+      "title": "Δείπνο Δολοφόνων",
       "cover": "/images/books/Δείπνο Δολοφόνων.jpg",
-      "blurb": "Pellentesque in ipsum id orci porta dapibus."
+      "blurb": "Μυθιστόρημα μυστηρίου",
+      "actions": "Beta reading"
     },
     {
-      "year": 2015,
-      "title": "Lorem Ipsum Vol 11",
-      "cover": "/images/books/Η κραυγή της μάνας.jpg",
-      "blurb": "Donec sollicitudin molestie malesuada."
+      "year": 2021,
+      "title": "Once Upon A Horror Time",
+      "cover": "/images/books/Once Upon A Horror Time.jpg",
+      "blurb": "Συλλογή Διηγημάτων",
+      "actions": "Επιμέλεια"
     },
     {
-      "year": 2014,
-      "title": "Lorem Ipsum Vol 12",
-      "cover": "/images/books/Η Μαντάμ 2.jpg",
-      "blurb": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a."
-    },
-    {
-      "year": 2013,
-      "title": "Lorem Ipsum Vol 13",
-      "cover": "/images/books/Η Σιωπή του Πίνακα.jpg",
-      "blurb": "Vestibulum ac diam sit amet quam vehicula elementum."
-    },
-    {
-      "year": 2012,
-      "title": "Lorem Ipsum Vol 14",
-      "cover": "/images/books/Ηλιαχτίδα.jpg",
-      "blurb": "Nulla quis lorem ut libero malesuada feugiat."
-    },
-    {
-      "year": 2011,
-      "title": "Lorem Ipsum Vol 15",
-      "cover": "/images/books/Μέχρι Τέλους.jpg",
-      "blurb": "Quisque velit nisi, pretium ut lacinia in, elementum id enim."
-    },
-    {
-      "year": 2010,
-      "title": "Lorem Ipsum Vol 16",
+      "year": 2022,
+      "title": "Μια Αιματοβαμμένη Νύχτα στην Τοσκάνη",
       "cover": "/images/books/Μια Αιματοβαμμένη Νύχτα στην Τοσκάνη.jpg",
-      "blurb": "Curabitur aliquet quam id dui posuere blandit."
+      "blurb": "Μυθιστόρημα τρόμου",
+      "actions": "Επιμέλεια-Διόρθωση"
     },
     {
-      "year": 2009,
-      "title": "Lorem Ipsum Vol 17",
+      "year": 2022,
+      "title": "Η Μαντάμ 2: Σκοτεινές Ψυχές",
+      "cover": "/images/books/Η Μαντάμ 2.jpg",
+      "blurb": "Κοινωνικό μυθιστόρημα",
+      "actions": "Επιμέλεια-Διόρθωση"
+    },
+    {
+      "year": 2022,
+      "title": "Οι Κόρες της Μάγισσας: από τη Ζόρα στη Νιόβη",
       "cover": "/images/books/Οι Κόρες της Μάγισσας.jpg",
-      "blurb": "Proin eget tortor risus."
+      "blurb": "Μυθιστόρημα φαντασίας",
+      "actions": "Επιμέλεια-Διόρθωση"
     },
     {
-      "year": 2008,
-      "title": "Lorem Ipsum Vol 18",
+      "year": 2022,
+      "title": "18 Ημέρες Μετά",
+      "cover": "/images/books/18 Μέρες Μετά.jpg",
+      "blurb": "Ρομαντικό μυθιστόρημα",
+      "actions": "Επιμέλεια-Διόρθωση"
+    },
+    {
+      "year": 2022,
+      "title": "Αίμα από Ασήμι",
+      "cover": "/images/books/Αίμα από ασήμι.jpg",
+      "blurb": "Μυθιστόρημα φαντασίας",
+      "actions": "Beta reading"
+    },
+    {
+      "year": 2022,
+      "title": "And they lived happily ever after?",
+      "cover": "/images/books/And they lived happily ever after.jpg",
+      "blurb": "Συλλογή Διηγημάτων",
+      "actions": "Επιμέλεια"
+    },
+    {
+      "year": 2023,
+      "title": "Πεφταστέρι",
       "cover": "/images/books/Πεφταστέρι.jpg",
-      "blurb": "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus."
+      "blurb": "Νουβέλα μεταφυσικού τρόμου",
+      "actions": "Επιμέλεια-Διόρθωση"
     },
     {
-      "year": 2007,
-      "title": "Lorem Ipsum Vol 19",
-      "cover": "/images/books/Τι κι αν.jpg",
-      "blurb": "Cras ultricies ligula sed magna dictum porta."
-    },
-    {
-      "year": 2006,
-      "title": "Lorem Ipsum Vol 20",
-      "cover": "/images/books/Το Μυστικό της Κρήνης.jpg",
-      "blurb": "Donec rutrum congue leo eget malesuada."
-    },
-    {
-      "year": 2005,
-      "title": "Lorem Ipsum Vol 21",
+      "year": 2023,
+      "title": "Το Τέκνο της Λύτρωσης",
       "cover": "/images/books/Το Τέκνο της Λύτρωσης.jpg",
-      "blurb": "Pellentesque in ipsum id orci porta dapibus."
+      "blurb": "Μυθιστόρημα φαντασίας",
+      "actions": "Επιμέλεια-Διόρθωση"
     },
     {
-      "year": 2004,
-      "title": "Lorem Ipsum Vol 22",
+      "year": 2023,
+      "title": "Το Ρόδο της Ερήμου",
+      "cover": "/images/books/9786182250488.jpg",
+      "blurb": "Κοινωνικό μυθιστόρημα",
+      "actions": "Επιμέλεια-Διόρθωση"
+    },
+    {
+      "year": 2023,
+      "title": "Οι Ξεχωριστοί",
+      "cover": "/images/books/Οι Ξεχωριστοί.png",
+      "blurb": "Ερωτικό μυθιστόρημα",
+      "actions": "Διόρθωση"
+    },
+    {
+      "year": 2023,
+      "title": "Μέχρι Τέλους",
+      "cover": "/images/books/Μέχρι Τέλους.jpg",
+      "blurb": "Μυθιστόρημα Μυστηρίου",
+      "actions": "Επιμέλεια-Διόρθωση"
+    },
+    {
+      "year": 2023,
+      "title": "There once was a myth",
+      "cover": "/images/books/There once was a myth.jpg",
+      "blurb": "Συλλογή Διηγημάτων",
+      "actions": "Επιμέλεια"
+    },
+    {
+      "year": 2024,
+      "title": "Το Μυστικό της Κρήνης",
+      "cover": "/images/books/Το Μυστικό της Κρήνης.jpg",
+      "blurb": "Κοινωνικό μυθιστόρημα",
+      "actions": "Επιμέλεια-Διόρθωση"
+    },
+    {
+      "year": 2024,
+      "title": "Αυτόματη Εστίαση",
+      "cover": "/images/books/Αυτόματη Εστιαση.jpg",
+      "blurb": "Θεατρικό έργο",
+      "actions": "Διόρθωση"
+    },
+    {
+      "year": 2024,
+      "title": "Για λίγο σ' αγαπώ",
+      "cover": "/images/books/Για λίγο σ' αγαπώ.png",
+      "blurb": "Ποιητική συλλογή",
+      "actions": "Επιμέλεια-Εικονογράφηση-Διόρθωση"
+    },
+    {
+      "year": 2024,
+      "title": "Echoes of a lost time",
+      "cover": "/images/books/echoes of a lost time.jpg",
+      "blurb": "Συλλογή Διηγημάτων",
+      "actions": "Επιμέλεια"
+    },
+    {
+      "year": 2025,
+      "title": "Η Σιωπή του Πίνακα",
+      "cover": "/images/books/Η Σιωπή του Πίνακα.jpg",
+      "blurb": "Ιστορικό μυθιστόρημα",
+      "actions": "Επιμέλεια-Διόρθωση"
+    },
+    {
+      "year": 2025,
+      "title": "Absent",
+      "cover": "/images/books/Absent.jpg",
+      "blurb": "Θεατρικό έργο",
+      "actions": "Διόρθωση"
+    },
+    {
+      "year": 2025,
+      "title": "Χάλκινο Κλειδί",
       "cover": "/images/books/Χάλκινο Κλειδί.jpeg",
-      "blurb": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a."
+      "blurb": "Εφηβικό μυθιστόρημα",
+      "actions": "Επιμέλεια-Διόρθωση"
+    },
+    {
+      "year": 2025,
+      "title": "Απόψε η παρέα μας: Μεσότοπος Λέσβου",
+      "cover": "/images/books/Απόψε η παρέα μας.jpg",
+      "blurb": "Non-fiction",
+      "actions": "Μετάφραση από τα ελληνικά στα αγγλικά"
+    },
+    {
+      "year": 2025,
+      "title": "Τερέζα: Η κραυγή της μάνας",
+      "cover": "/images/books/Η κραυγή της μάνας.jpg",
+      "blurb": "Κοινωνικό μυθιστόρημα",
+      "actions": "Επιμέλεια-Διόρθωση"
+    },
+    {
+      "year": 2025,
+      "title": "Τι κι αν",
+      "cover": "/images/books/Τι κι αν.jpg",
+      "blurb": "Συλλογή Διηγημάτων",
+      "actions": "Διόρθωση"
+    },
+    {
+      "year": 2025,
+      "title": "The path not taken",
+      "cover": "/images/books/The path not taken.jpg",
+      "blurb": "Συλλογή Διηγημάτων",
+      "actions": "Επιμέλεια"
+    },
+    {
+      "year": 2025,
+      "title": "Wednesday",
+      "cover": "/images/books/Wednesday.jpg",
+      "blurb": "Εφηβικό μυθιστόρημα",
+      "actions": "Επιμέλεια μετάφρασης"
     }
   ]
 }
