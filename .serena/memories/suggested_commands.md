@@ -1,0 +1,9 @@
+- `npm install` – install dependencies.
+- `npm run dev` – start Vite dev server with hot reload.
+- `npm run type-check` – run `vue-tsc --build` for strict TS validation.
+- `npm run build` – run type-check + `vite build` via npm-run-all wrapper.
+- `npm run preview` – serve latest production build locally.
+- `npm run lint` – ESLint with cache + --fix over the repo.
+- `npm run format` – Prettier write for ts/js/vue/css/md/json/yml.
+- `npm run prepare` – reinstall Husky hooks (needed after fresh clone).
+- `npm run build-only` – Vite production build without the preceding type-check step (useful when type-check already ran).

@@ -1,0 +1,23 @@
+:root {
+  /* Force light theme globally */
+  color-scheme: light;
+  --color-bg: #b5b5bb;
+  --color-surface: #ffffff;
+  --color-text: #1f1f29;
+  --color-muted: #6b6b7a;
+  --color-primary: #b39ddb; /* lilac */
+  --color-primary-600: #9575cd;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  --container: 1200px;
+
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial,
+    'Apple Color Emoji', 'Segoe UI Emoji';
+}

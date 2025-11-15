@@ -1,0 +1,5 @@
+- Purpose: Single-page Vue 3 + Vite portfolio that reads all copy, assets, and metadata from JSON files under `public/content`. Sections include hero, intro, book timeline, services, posts carousel, contact form, and footer per docs/plan.
+- Tech stack: TypeScript, Vue 3 SFCs with Pinia + Vue Router, Vite build tooling, IntersectionObserver utilities for scroll animations, CSS variables/base styles.
+- Structure highlights: `src/components` holds each homepage section, `src/services/content.ts` centralizes typed fetchers (getSite/getHome/etc), `src/directives/reveal.ts` powers scroll reveal, `src/styles` for variables/base, `.vscode` enforces formatting + ESLint, `.husky/pre-commit` runs lint-staged.
+- Content/data expectations: no hardcoded text in components; everything should be loaded through the content service from JSON sources.
+- Outstanding work: docs/status notes Lighthouse ≥ 90 for accessibility/perf still pending.

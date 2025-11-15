@@ -1,0 +1,49 @@
+{
+  "logo": {
+    "src": "/logo.png",
+    "alt": "Site logo"
+  },
+  "nav": [
+    {
+      "label": "Home",
+      "href": "#home"
+    },
+    {
+      "label": "Intro",
+      "href": "#intro"
+    },
+    {
+      "label": "Timeline",
+      "href": "#timeline"
+    },
+    {
+      "label": "Services",
+      "href": "#services"
+    },
+    {
+      "label": "Posts",
+      "href": "#posts"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    }
+  ],
+  "socials": [
+    {
+      "label": "Twitter",
+      "href": "https://twitter.com/"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/"
+    }
+  ],
+  "footer": {
+    "copyright": "© 2025 Your Name. All rights reserved."
+  }
+}

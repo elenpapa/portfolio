@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "title": "UI Development",
+      "description": "Responsive, accessible, and fast interfaces.",
+      "icon": "sparkles"
+    },
+    {
+      "title": "Design Systems",
+      "description": "Reusable components and scalable tokens.",
+      "icon": "layers"
+    },
+    {
+      "title": "Performance Audits",
+      "description": "Measure, analyze, and optimize load times.",
+      "icon": "gauge"
+    }
+  ]
+}

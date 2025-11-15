@@ -1,0 +1,19 @@
+{
+  "hero": {
+    "title": "Build. Share. Inspire.",
+    "subtitle": "A clean, modern portfolio.",
+    "cta": {
+      "label": "See my work",
+      "href": "#services"
+    },
+    "backgroundImage": "/images/hero.png"
+  },
+  "intro": {
+    "title": "Hello, I'm [Your Name]",
+    "text": "I craft thoughtful digital experiences with a focus on performance, accessibility, and delightful details.",
+    "image": {
+      "src": "/images/intro.jpg",
+      "alt": "Portrait"
+    }
+  }
+}

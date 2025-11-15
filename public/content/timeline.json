@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "year": 2019,
+      "title": "First Book",
+      "cover": "/images/books/book1.jpg",
+      "blurb": "An exploration of modern web foundations."
+    },
+    {
+      "year": 2021,
+      "title": "Second Book",
+      "cover": "/images/books/book2.jpg",
+      "blurb": "Advanced patterns for scalable frontends."
+    },
+    {
+      "year": 2024,
+      "title": "Latest Book",
+      "cover": "/images/books/book3.jpg",
+      "blurb": "Designing accessible, performant interfaces."
+    }
+  ]
+}

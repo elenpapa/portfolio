@@ -1,0 +1,22 @@
+{
+  "title": "Get in touch",
+  "description": "Have a question or a project in mind? Drop a line.",
+  "fields": {
+    "name": {
+      "label": "Name",
+      "placeholder": "Your full name"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "name@example.com"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "How can I help?"
+    }
+  },
+  "submit": {
+    "label": "Send Message"
+  },
+  "mailto": "mailto:hello@example.com"
+}

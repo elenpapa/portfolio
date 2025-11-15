@@ -1,0 +1,5 @@
+- Use TypeScript in `.vue` SFCs with the `@` alias for src paths; prefer script setup when possible.
+- All textual/content changes must flow through `public/content/*.json` and the typed getters in `src/services/content.ts` (avoid hardcoded strings in components).
+- Animations should respect the existing IntersectionObserver reveal helper and `prefers-reduced-motion`.
+- CSS styling relies on `src/styles/variables.css` for colors (light gray + lilac palette); keep new colors/tokens centralized there.
+- Formatting: Prettier (no semicolons, single quotes, printWidth 100) + ESLint flat config (`plugin-vue` essential rules, `vue/multi-word-component-names` disabled). Run `npm run format` before committing non-trivial changes.
