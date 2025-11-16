@@ -1,11 +1,4 @@
-// Import JSON files at build time instead of runtime fetch
 import { z } from 'zod'
-import siteData from '../../public/content/site.json'
-import homeData from '../../public/content/home.json'
-import timelineData from '../../public/content/timeline.json'
-import servicesData from '../../public/content/services.json'
-import postsData from '../../public/content/posts.json'
-import contactData from '../../public/content/contact.json'
 
 // Zod schemas for runtime validation
 const NavItemSchema = z.object({
@@ -132,12 +125,30 @@ export type PostItem = z.infer<typeof PostItemSchema>
 export type PostsContent = z.infer<typeof PostsContentSchema>
 export type ContactContent = z.infer<typeof ContactContentSchema>
 
+// Simple in-memory cache to avoid duplicate fetches
+const cache = new Map<string, unknown>()
+
+async function fetchAndParse<T>(url: string, schema: z.ZodSchema<T>): Promise<T> {
+  if (cache.has(url)) return schema.parse(cache.get(url))
+
+  const res = await fetch(url, { headers: { 'cache-control': 'no-cache' } })
+  if (!res.ok) throw new Error(`Failed to load content: ${url} (${res.status})`)
+  const json = await res.json()
+  const parsed = schema.parse(json)
+  cache.set(url, parsed)
+  return parsed
+}
+
 // Return validated data (throws if validation fails)
 export const content = {
-  getSite: async (): Promise<SiteContent> => SiteContentSchema.parse(siteData),
-  getHome: async (): Promise<HomeContent> => HomeContentSchema.parse(homeData),
-  getTimeline: async (): Promise<TimelineContent> => TimelineContentSchema.parse(timelineData),
-  getServices: async (): Promise<ServicesContent> => ServicesContentSchema.parse(servicesData),
-  getPosts: async (): Promise<PostsContent> => PostsContentSchema.parse(postsData),
-  getContact: async (): Promise<ContactContent> => ContactContentSchema.parse(contactData),
+  getSite: async (): Promise<SiteContent> => fetchAndParse('/content/site.json', SiteContentSchema),
+  getHome: async (): Promise<HomeContent> => fetchAndParse('/content/home.json', HomeContentSchema),
+  getTimeline: async (): Promise<TimelineContent> =>
+    fetchAndParse('/content/timeline.json', TimelineContentSchema),
+  getServices: async (): Promise<ServicesContent> =>
+    fetchAndParse('/content/services.json', ServicesContentSchema),
+  getPosts: async (): Promise<PostsContent> =>
+    fetchAndParse('/content/posts.json', PostsContentSchema),
+  getContact: async (): Promise<ContactContent> =>
+    fetchAndParse('/content/contact.json', ContactContentSchema),
 }

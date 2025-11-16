@@ -9,13 +9,13 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section id="timeline" v-reveal>
+  <section id="timeline">
     <div class="container timeline">
       <h2 class="section-title">Εργογραφία</h2>
       <div class="timeline-grid" aria-hidden="false">
         <div class="timeline-column timeline-column--left">
           <article
-            v-for="(item, idx) in data?.items.filter((_, i) => i % 2 === 0)"
+            v-for="(item, idx) in (data?.items || []).filter((_, i) => i % 2 === 0)"
             :key="`left-${idx}`"
             class="entry"
           >
@@ -37,7 +37,7 @@ onMounted(async () => {
         <div class="timeline-divider" aria-hidden="true"></div>
         <div class="timeline-column timeline-column--right">
           <article
-            v-for="(item, idx) in data?.items.filter((_, i) => i % 2 === 1)"
+            v-for="(item, idx) in (data?.items || []).filter((_, i) => i % 2 === 1)"
             :key="`right-${idx}`"
             class="entry entry--right"
           >
