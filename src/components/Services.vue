@@ -56,6 +56,7 @@ const services = computed(() => data.value?.items ?? [])
 <style scoped>
 .services-section {
   background: var(--color-surface);
+  padding-bottom: 100px;
 }
 .services-header {
   max-width: 720px;

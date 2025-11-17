@@ -9,7 +9,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section id="intro" v-reveal>
+  <section id="intro" v-reveal class="intro-section diagonal--ltr">
     <div class="container intro">
       <div class="text">
         <h2>{{ home?.intro.title }}</h2>
@@ -31,6 +31,11 @@ onMounted(async () => {
 </template>
 
 <style scoped>
+.intro-section {
+  background: var(--color-bg);
+  padding-bottom: 100px;
+}
+
 .intro {
   display: grid;
   grid-template-columns: 1.2fr 1fr;

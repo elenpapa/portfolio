@@ -86,6 +86,8 @@ const PostItemSchema = z.object({
 })
 
 const PostsContentSchema = z.object({
+  heading: z.string().optional(),
+  description: z.string().optional(),
   items: z.array(PostItemSchema),
 })
 

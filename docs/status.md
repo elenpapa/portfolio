@@ -31,6 +31,9 @@ Updated: 2025-11-16
 - [x] Posts carousel (`src/components/PostsCarousel.vue`)
   - **NEW**: Migrated to Embla Carousel (13KB savings)
   - **NEW**: Enhanced keyboard navigation
+  - **NEW**: WebP image optimization (57% size reduction)
+  - **NEW**: Smart loading strategy (eager first 3, lazy rest)
+  - **NEW**: Loading skeleton for better UX
 - [x] Contact form (`src/components/ContactForm.vue`)
   - **NEW**: VeeValidate + Zod validation
   - **NEW**: Accessible error messages with ARIA
@@ -51,6 +54,9 @@ Updated: 2025-11-16
 - **Image Optimization**: Added vite-plugin-image-optimizer
   - Automatic WebP/AVIF generation
   - 73% average image size reduction (47MB → 17MB)
+- **Post Images**: Converted to WebP format
+  - PNG → WebP: 23.6MB → 10.2MB (57% reduction)
+  - Script: `scripts/convert-images-to-webp.js`
 - **Bundle Compression**: Brotli + Gzip pre-compression
   - CSS: 25KB → 4.49KB (Brotli)
   - JS: 205KB → 69KB (Brotli total)
@@ -58,6 +64,13 @@ Updated: 2025-11-16
 - **Code Cleanup**: Removed unused dependencies (pinia, vue-router, @vitejs/plugin-vue-jsx)
   - Savings: ~40KB
 - **Hero CLS Fix**: Replaced dynamic height with CSS aspect-ratio
+- **Carousel Optimization**: Simplified initialization logic
+  - Removed redundant watchers and reInit calls
+  - Eliminated race conditions
+  - Added hardware acceleration (`will-change`)
+- **Smart Image Loading**: Priority hints for visible images
+  - First 3 slides: `loading="eager"` + `fetchpriority="high"`
+  - Remaining slides: `loading="lazy"` + `fetchpriority="low"`
 
 ### Build Results
 
