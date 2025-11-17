@@ -88,7 +88,7 @@ function close() {
 const isDesktop = () => globalThis.innerWidth >= 1024
 
 // Update bubble state based on scroll position and header height
-const updateBubble = async () => {
+const updateBubble = () => {
   if (!headerEl.value) return
   if (!isDesktop()) {
     isBubble.value = false
@@ -98,28 +98,12 @@ const updateBubble = async () => {
   const threshold = headerEl.value.offsetHeight || 0
   const shouldBubble = globalThis.scrollY > threshold
 
-  const wasBubble = isBubble.value
-  const wasExpanded = isExpanded.value
-
-  // Collapse when exiting bubble state OR when entering bubble state
-  if (!shouldBubble || (shouldBubble && !isBubble.value)) {
+  // Always collapse when transitioning states
+  if (isBubble.value !== shouldBubble) {
     isExpanded.value = false
-    //sleep for 100ms
-    await new Promise((resolve) => setTimeout(resolve, 100))
   }
 
-  // console.log(`[Header] Setting isBubble to ${shouldBubble}`)
   isBubble.value = shouldBubble
-
-  // Log transitions
-  if (wasBubble !== isBubble.value) {
-    console.log(
-      `[Header] Bubble state changed: ${wasBubble} -> ${isBubble.value} (scrollY: ${globalThis.scrollY}, threshold: ${threshold})`,
-    )
-  }
-  if (wasExpanded !== isExpanded.value) {
-    console.log(`[Header] Expanded state changed: ${wasExpanded} -> ${isExpanded.value}`)
-  }
 }
 
 let ticking = false
@@ -135,36 +119,22 @@ const onScroll = () => {
 
 // Hover/focus expansion handlers
 function onEnter() {
-  console.log(`[Header] onEnter called - isDesktop: ${isDesktop()}, isBubble: ${isBubble.value}`)
   if (!isDesktop()) return
-  if (isBubble.value) {
-    console.log(`[Header] Setting isExpanded to true`)
-    isExpanded.value = true
-  }
+  if (isBubble.value) isExpanded.value = true
 }
 function onLeave() {
-  console.log(`[Header] onLeave called - isDesktop: ${isDesktop()}, isBubble: ${isBubble.value}`)
   if (!isDesktop()) return
-  if (isBubble.value) {
-    console.log(`[Header] Setting isExpanded to false`)
-    isExpanded.value = false
-  }
+  if (isBubble.value) isExpanded.value = false
 }
 function onFocusIn() {
-  console.log(`[Header] onFocusIn called - isDesktop: ${isDesktop()}, isBubble: ${isBubble.value}`)
   if (!isDesktop()) return
-  if (isBubble.value) {
-    console.log(`[Header] Setting isExpanded to true via focus`)
-    isExpanded.value = true
-  }
+  if (isBubble.value) isExpanded.value = true
 }
 function onFocusOut(e: FocusEvent) {
-  console.log(`[Header] onFocusOut called - isDesktop: ${isDesktop()}, isBubble: ${isBubble.value}`)
   if (!isDesktop()) return
   // Collapse when focus leaves the header entirely
   const related = e.relatedTarget as Node | null
   if (isBubble.value && headerEl.value && related && !headerEl.value.contains(related)) {
-    console.log(`[Header] Setting isExpanded to false via focus out`)
     isExpanded.value = false
   }
 }
@@ -180,7 +150,7 @@ const onKeyDown = (e: KeyboardEvent) => {
 <template>
   <header
     class="site-header"
-    :class="{ bubble: isBubble, expanded: false }"
+    :class="{ bubble: isBubble, expanded: isExpanded }"
     ref="headerEl"
     role="banner"
     @mouseenter="onEnter"
@@ -259,7 +229,8 @@ const onKeyDown = (e: KeyboardEvent) => {
   border-bottom: 1px solid rgba(179, 157, 219, 0.35);
   box-shadow: 0 16px 35px rgba(38, 22, 64, 0.12);
   z-index: 50;
-  animation: headerReveal 0.55s ease 0.05s both;
+  animation: var(--nice-animation);
+  transition: var(--nice-transition);
 }
 .spacer {
   height: var(--site-header-height, 76px);
@@ -271,6 +242,7 @@ const onKeyDown = (e: KeyboardEvent) => {
   padding: 0.5rem clamp(1rem, 5vw, 2.75rem);
   gap: 1rem;
   min-height: 68px;
+  margin-left: 20px;
 }
 .brand {
   display: inline-flex;
@@ -539,15 +511,15 @@ const onKeyDown = (e: KeyboardEvent) => {
     justify-content: center;
     padding: 0;
     box-shadow: 0 18px 40px rgba(28, 24, 45, 0.22);
-    transition:
-      transform 220ms ease,
-      opacity 220ms ease;
+    animation: var(--nice-animation);
+    transition: var(--nice-transition);
     will-change: transform;
   }
   .site-header.bubble .bar {
     padding: 0;
     min-height: 0;
     gap: 0;
+    margin-left: auto;
   }
   .site-header.bubble .nav {
     position: relative;
@@ -580,21 +552,24 @@ const onKeyDown = (e: KeyboardEvent) => {
     transform: translateY(6px) scale(0.98);
     transform-origin: right top;
     pointer-events: none;
-    transition:
+    /* transition:
       opacity 200ms ease,
-      transform 220ms ease;
+      transform 220ms ease; */
     max-height: none;
     overflow: visible;
   }
+
   .site-header.bubble .links li {
     width: 100%;
   }
+
   .site-header.bubble .links a,
   .site-header.bubble .links .nav-link {
     display: block;
     width: 100%;
     padding: 12px 16px;
   }
+
   .site-header.bubble.expanded .links,
   .site-header.bubble:focus-within .links {
     opacity: 1;
@@ -609,6 +584,9 @@ const onKeyDown = (e: KeyboardEvent) => {
   .links,
   .hamburger-box span {
     animation: none !important;
+    transition: none !important;
+  }
+  .site-header.bubble .links {
     transition: none !important;
   }
 }

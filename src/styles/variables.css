@@ -20,6 +20,14 @@
 
   --container: 1200px;
 
+  --nice-transition:
+    top 1400ms cubic-bezier(0.34, 1.56, 0.64, 1), left 1400ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    right 1400ms cubic-bezier(0.34, 1.56, 0.64, 1), width 1400ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    height 1400ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-radius 1400ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 1350ms ease,
+    border-bottom 1350ms ease;
+  --nice-animation: headerReveal 0.55s ease 0.05s both;
+
   /* Font stacks */
   --font-serif: 'EB Garamond', Garamond, Georgia, 'Times New Roman', serif;
   --font-sans:
