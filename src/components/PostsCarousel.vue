@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, nextTick, watch } from 'vue'
+import SvgIcon from '@/components/SvgIcon.vue'
 import emblaCarouselVue from 'embla-carousel-vue'
 import { content, type PostsContent } from '@/services/content'
 
@@ -106,14 +107,7 @@ const scrollNext = () => {
           aria-label="Previous posts"
           title="Previous posts"
         >
-          <img
-            src="/images/common/chevron-left.svg"
-            alt=""
-            class="icon"
-            aria-hidden="true"
-            width="20"
-            height="20"
-          />
+          <SvgIcon name="chevron-left" class="icon" :width="20" :height="20" ariaHidden />
           <span class="sr-only">Previous</span>
         </button>
 
@@ -151,14 +145,7 @@ const scrollNext = () => {
           aria-label="Next posts"
           title="Next posts"
         >
-          <img
-            src="/images/common/chevron-right.svg"
-            alt=""
-            class="icon"
-            aria-hidden="true"
-            width="20"
-            height="20"
-          />
+          <SvgIcon name="chevron-right" class="icon" :width="20" :height="20" ariaHidden />
           <span class="sr-only">Next</span>
         </button>
       </div>
