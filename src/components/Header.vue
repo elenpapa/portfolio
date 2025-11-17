@@ -242,7 +242,6 @@ const onKeyDown = (e: KeyboardEvent) => {
   padding: 0.5rem clamp(1rem, 5vw, 2.75rem);
   gap: 1rem;
   min-height: 68px;
-  margin-left: 20px;
 }
 .brand {
   display: inline-flex;
@@ -437,8 +436,21 @@ const onKeyDown = (e: KeyboardEvent) => {
 }
 
 @media (max-width: 767px) {
+  .site-header {
+    box-shadow: 0 8px 20px rgba(38, 22, 64, 0.1);
+  }
   .bar {
-    align-items: flex-start;
+    align-items: center;
+    padding: 0.5rem clamp(0.75rem, 4vw, 1rem);
+    min-height: 60px;
+    gap: 0.75rem;
+  }
+  .brand {
+    gap: 0.5rem;
+  }
+  .brand img {
+    height: 48px;
+    padding: 4px;
   }
   .brand-copy .title {
     font-size: 1rem;
@@ -446,15 +458,24 @@ const onKeyDown = (e: KeyboardEvent) => {
   .nav {
     flex-direction: column;
     align-items: flex-end;
+    padding: 0;
   }
   .hamburger {
     display: inline-flex;
+    width: 40px;
+    height: 40px;
+  }
+  .hamburger-box {
+    gap: 5px;
+  }
+  .hamburger-box span {
+    width: 20px;
   }
   .links {
     position: absolute;
-    top: var(--site-header-height, 72px);
-    right: clamp(1rem, 6vw, 2rem);
-    left: clamp(1rem, 6vw, 2rem);
+    top: calc(var(--site-header-height, 60px) - 4px);
+    right: clamp(0.75rem, 4vw, 1rem);
+    left: clamp(0.75rem, 4vw, 1rem);
     flex-direction: column;
     background: rgba(255, 255, 255, 0.97);
     border-radius: var(--radius-md);
@@ -474,29 +495,46 @@ const onKeyDown = (e: KeyboardEvent) => {
     display: block;
     width: 100%;
     padding: 12px 16px;
+    font-size: var(--font-size-base);
   }
   .links .nav-link {
     display: block;
     width: 100%;
     padding: 12px 16px;
+    font-size: var(--font-size-base);
   }
   .links.open {
-    max-height: 350px;
+    max-height: 400px;
     padding: 0.5rem 0;
   }
 }
 
 @media (max-width: 479px) {
+  .bar {
+    padding: 0.5rem 0.75rem;
+    min-height: 56px;
+  }
   .brand {
     gap: 0.5rem;
   }
   .brand img {
-    height: 56px;
+    height: 44px;
+    padding: 3px;
+  }
+  .hamburger {
+    width: 38px;
+    height: 38px;
+  }
+  .hamburger-box span {
+    width: 18px;
   }
 }
 
 /* Desktop bubble styles */
 @media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+  .bar {
+    margin-left: 20px;
+  }
   .site-header.bubble {
     top: clamp(0.75rem, 2.5vh, 1.5rem);
     right: clamp(0.75rem, 2vw, 1.5rem);
@@ -552,9 +590,6 @@ const onKeyDown = (e: KeyboardEvent) => {
     transform: translateY(6px) scale(0.98);
     transform-origin: right top;
     pointer-events: none;
-    /* transition:
-      opacity 200ms ease,
-      transform 220ms ease; */
     max-height: none;
     overflow: visible;
   }

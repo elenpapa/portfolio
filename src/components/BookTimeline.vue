@@ -66,6 +66,9 @@ onMounted(async () => {
 </template>
 
 <style scoped>
+/* ==========================
+   Base (desktop-first)
+   ========================== */
 .timeline-section {
   background: var(--color-surface);
   padding: 60px 0;
@@ -93,39 +96,8 @@ onMounted(async () => {
   display: flex;
   flex-direction: column;
 }
-.entry .branch {
-  position: absolute;
-  top: 53%;
-  transform: translateY(-50%);
-  height: 2px;
-  background: rgba(0, 0, 0, 0.08);
-  width: 33px;
-  z-index: 2;
-  border-radius: 2px;
-}
-.timeline-column--left .entry .branch {
-  right: -33px;
-}
-.timeline-column--right .entry .branch {
-  left: -33px;
-}
-.entry .branch::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--color-primary-600);
-  z-index: 2;
-}
-.timeline-column--left .entry .branch::after {
-  right: -7px;
-}
-.timeline-column--right .entry .branch::after {
-  left: -7px;
-}
+
+/* Entry / card styles */
 .entry {
   display: grid;
   grid-template-columns: 220px auto;
@@ -161,6 +133,41 @@ onMounted(async () => {
 .entry--right .cover {
   order: 2;
 }
+
+.entry .branch {
+  position: absolute;
+  top: 53%;
+  transform: translateY(-50%);
+  height: 4px;
+  background: rgba(0, 0, 0, 0.08);
+  width: 33px;
+  z-index: 2;
+  border-radius: 2px;
+}
+.timeline-column--left .entry .branch {
+  right: -33px;
+}
+.timeline-column--right .entry .branch {
+  left: -33px;
+}
+.entry .branch::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-primary-600);
+  z-index: 2;
+}
+.timeline-column--left .entry .branch::after {
+  right: -7px;
+}
+.timeline-column--right .entry .branch::after {
+  left: -7px;
+}
+
 .cover {
   width: 100%;
   height: auto;
@@ -204,28 +211,6 @@ onMounted(async () => {
   font-weight: 600;
   font-style: italic;
 }
-@media (max-width: 900px) {
-  .timeline-grid {
-    grid-template-columns: 1fr;
-  }
-  .timeline-divider {
-    display: none;
-  }
-  .timeline-column {
-    border-left: 2px solid rgba(0, 0, 0, 0.1);
-    padding-left: 16px;
-  }
-  .entry,
-  .entry--right {
-    grid-template-columns: 240px auto;
-  }
-  .entry--right .meta {
-    text-align: left;
-  }
-  .entry .branch {
-    display: none;
-  }
-}
 
 .section-title {
   font-family: var(--font-serif);
@@ -236,8 +221,92 @@ onMounted(async () => {
   text-align: center;
 }
 
-/* Page flip reveal effect */
-/* Base reveal utility adds .reveal and .reveal--shown via v-reveal */
+/* ==========================
+   Tablet (medium breakpoints)
+   <= 1023px
+   ========================== */
+@media (max-width: 1023px) {
+  .timeline-grid {
+    gap: 24px;
+  }
+  /* slightly reduce card image column to fit medium viewports */
+  .entry,
+  .entry--right {
+    grid-template-columns: 200px auto;
+  }
+}
+
+/* ==========================
+   Mobile (small screens)
+   <= 900px
+   ========================== */
+@media (max-width: 900px) {
+  .timeline-section {
+    padding: 40px 0;
+  }
+  .section-title {
+    margin-bottom: 24px;
+    font-size: clamp(1.5rem, 5vw, 1.75rem);
+  }
+  .timeline-grid {
+    grid-template-columns: 1fr;
+  }
+  .timeline-divider {
+    display: none;
+  }
+  .timeline-column {
+    border-left: 2px solid rgba(0, 0, 0, 0.1);
+    padding-left: 12px;
+  }
+  .entry,
+  .entry--right {
+    grid-template-columns: 120px 1fr;
+    gap: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  .entry--right {
+    margin-top: 20px;
+  }
+  .entry--right .meta {
+    text-align: left;
+  }
+  .entry .branch {
+    display: none;
+  }
+  /* Make cover images smaller on mobile to save vertical space */
+  .entry .cover,
+  .entry--right .cover {
+    width: 120px;
+    height: auto;
+    align-self: flex-start;
+  }
+  .entry--right .cover {
+    order: 1;
+  }
+  /* Optimize typography for mobile */
+  .meta h3 {
+    font-size: var(--font-size-xl);
+    margin: 0 0 4px;
+  }
+  .meta .year {
+    font-size: var(--font-size-base);
+  }
+  .meta .blurb {
+    font-size: var(--font-size-base);
+    margin: 6px 0 0;
+    line-height: 1.5;
+  }
+  .meta .actions {
+    font-size: var(--font-size-base);
+    margin: 6px 0 0;
+  }
+}
+
+/* ==========================
+   Page flip reveal effect
+   (reveal utility provides .reveal and .reveal--shown)
+   ========================== */
 .entry.reveal--pageflip-left,
 .entry.reveal--pageflip-right {
   /* Override the global .reveal defaults with a 3D flip */
@@ -286,6 +355,9 @@ onMounted(async () => {
   opacity: 0;
 }
 
+/* ==========================
+   Accessibility: reduced motion
+   ========================== */
 @media (prefers-reduced-motion: reduce) {
   .entry.reveal--pageflip-left,
   .entry.reveal--pageflip-right {
